@@ -55,6 +55,17 @@ const App = () => {
     setFavorite('dog');
   };
 
+  const [checkedOne, setCheckedOne] = React.useState(false);
+  const [checkedTwo, setCheckedTwo] = React.useState(false);
+
+  const handleChangeOne = () => {
+    setCheckedOne(!checkedOne);
+  };
+
+  const handleChangeTwo = () => {
+    setCheckedTwo(!checkedTwo);
+  };
+
   return (
     <div>
       <h1>My Hacker Stories</h1>
@@ -67,18 +78,20 @@ const App = () => {
 
       <hr />
       
-      <>
       <Button type='button' onClick={onClick}>Click Me!</Button>
       {isOpen && <div>Content</div>}
-      </>
 
       <hr />
 
-      <>
       <RadioButton label="Cat" value={favorite === 'cat'} onCHange={handleCatCHange}></RadioButton>
       <br></br>
       <RadioButton label="Dog" value={favorite === 'dog'} onChange={handleDogCHange}></RadioButton>
-      </>
+
+      <hr/>
+
+      <CheckBox label="Value 1" value={checkedOne} onChange={handleChangeOne}></CheckBox>
+      <br></br>
+      <CheckBox label="Value 2" value={checkedTwo} onChange={handleChangeTwo}></CheckBox>
   
     </div>
   );
@@ -129,6 +142,15 @@ const RadioButton = ( {label, value, onCHange, ...rest} ) => {
     <label>
       <input type='radio' checked={value} onChange={onCHange} {...rest}/>
       {label}
+    </label>
+  );
+};
+
+const CheckBox = ( {label, value, onChange, ...rest} ) => {
+  return (
+    <label>
+      {label}
+      <input type="checkbox" checked={value} onChange={onChange} {...rest}/>
     </label>
   );
 };
