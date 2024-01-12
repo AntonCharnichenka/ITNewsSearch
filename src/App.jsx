@@ -45,6 +45,16 @@ const App = () => {
   const [isOpen, setOpen] = React.useState(false);
   const onClick = () => {setOpen(!isOpen)};
 
+  const [favorite, setFavorite] = React.useState('dog')
+
+  const handleCatCHange = () => {
+    setFavorite('cat');
+  };
+
+  const handleDogCHange = () => {
+    setFavorite('dog');
+  };
+
   return (
     <div>
       <h1>My Hacker Stories</h1>
@@ -54,9 +64,20 @@ const App = () => {
       <hr />
 
       <List list={searchedStories} />
+
+      <hr />
+      
       <>
       <Button type='button' onClick={onClick}>Click Me!</Button>
       {isOpen && <div>Content</div>}
+      </>
+
+      <hr />
+
+      <>
+      <RadioButton label="Cat" value={favorite === 'cat'} onCHange={handleCatCHange}></RadioButton>
+      <br></br>
+      <RadioButton label="Dog" value={favorite === 'dog'} onChange={handleDogCHange}></RadioButton>
       </>
   
     </div>
@@ -102,4 +123,14 @@ const Button = ( {type='button', onClick, children, ...rest} ) => {
   </button>
   );
 };
+
+const RadioButton = ( {label, value, onCHange, ...rest} ) => {
+  return (
+    <label>
+      <input type='radio' checked={value} onChange={onCHange} {...rest}/>
+      {label}
+    </label>
+  );
+};
+
 export default App;
