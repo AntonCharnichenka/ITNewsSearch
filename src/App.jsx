@@ -1,7 +1,7 @@
 import * as React from 'react';
 import axios from 'axios';
 
-import './App.css';
+import styles from './App.module.css';
 
 const storiesReducer = (state, action) => {
   switch (action.type) {
@@ -102,14 +102,14 @@ const App = () => {
   };
 
   return (
-    <div className='container'>
-      <h1 className='headline-primary'>My Hacker Stories</h1>
+    <div className={styles.container}>
+      <h1 className={styles.headlinePrimary}>My Hacker Stories</h1>
 
       <SearchForm
         searchTerm={searchTerm}
         onSearchInput={handleSearchInput}
         onSearchSubmit={handleSearchSubmit}
-        button_class="button_large"
+        button_class={`${styles.button} ${styles.buttonLarge}`}
       />
 
       <hr />
@@ -165,10 +165,10 @@ const InputWithLabel = ({
 
   return (
     <>
-      <label className="label" htmlFor={id}>{children}</label>
+      <label className={styles.label} htmlFor={id}>{children}</label>
       &nbsp;
       <input
-        className="input"
+        className={styles.input}
         ref={inputRef}
         id={id}
         type={type}
@@ -192,7 +192,7 @@ const List = ({ list, onRemoveItem }) => (
 );
 
 const Item = ({ item, onRemoveItem }) => (
-  <li className='item'>
+  <li className={styles.item}>
     <span style={{width: '40%'}}>
       <a href={item.url}>{item.title}</a>
     </span>
@@ -200,7 +200,7 @@ const Item = ({ item, onRemoveItem }) => (
     <span style={{width: '30%'}}>{item.num_comments}</span>
     <span style={{width: '10%'}}>{item.points}</span>
     <span style={{width: '10%'}}>
-      <button className="button button_small" type="button" onClick={() => onRemoveItem(item)}>
+      <button className={`${styles.button} ${styles.buttonSmall}`} type="button" onClick={() => onRemoveItem(item)}>
         Dismiss
       </button>
     </span>
