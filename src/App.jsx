@@ -3,8 +3,10 @@ import axios from 'axios';
 // import styles from './App.module.css';
 import styled from 'styled-components';
 
-import CheckIcon from './check.svg?react';
-import GlassIcon from './simple_glass.svg?react';
+// import CheckIcon from './check.svg?react';
+// import GlassIcon from './simple_glass.svg?react';
+import { CiSearch } from "react-icons/ci";
+import { CiCircleRemove } from "react-icons/ci";
 
 const StyledContainer = styled.div`
   height: 100vw;
@@ -229,7 +231,7 @@ const SearchForm = ({
     </InputWithLabel>
 
     <StyledButtonSmall type="submit" disabled={!searchTerm}>
-      <GlassIcon height="18px" width="18px"/>
+      <CiSearch/>
     </StyledButtonSmall>
   </StyledSearchForm>
 );
@@ -287,7 +289,7 @@ const Item = ({ item, onRemoveItem }) => (
     <StyledColumn width="40%">{item.points}</StyledColumn>
     <StyledColumn width="40%">
       <StyledButtonSmall type="button" onClick={() => onRemoveItem(item)}>
-        <CheckIcon height="18px" width="18px" />
+        <CiCircleRemove/>
       </StyledButtonSmall>
     </StyledColumn>
   </StyledItem>
