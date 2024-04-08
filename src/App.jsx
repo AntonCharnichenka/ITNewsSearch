@@ -1,7 +1,10 @@
 import * as React from 'react';
 import axios from 'axios';
-import styles from './App.module.css';
+// import styles from './App.module.css';
 import styled from 'styled-components';
+
+import CheckIcon from './check.svg?react';
+import GlassIcon from './simple_glass.svg?react';
 
 const StyledContainer = styled.div`
   height: 100vw;
@@ -48,6 +51,17 @@ const StyledButton = styled.button`
     background: #171212;
     color: #ffffff;
   };
+
+  &:hover > svg > g {
+    fill: #ffffff;
+    stroke: #ffffff;
+  };
+
+  &:hover > svg > path {
+    // fill: #ffffff;
+    stroke: #ffffff;
+  };
+  }
 `;
 
 const StyledButtonSmall = styled(StyledButton)`
@@ -214,9 +228,9 @@ const SearchForm = ({
       <strong>Search:</strong>
     </InputWithLabel>
 
-    <StyledButtonLarge type="submit" disabled={!searchTerm}>
-      Submit
-    </StyledButtonLarge>
+    <StyledButtonSmall type="submit" disabled={!searchTerm}>
+      <GlassIcon height="18px" width="18px"/>
+    </StyledButtonSmall>
   </StyledSearchForm>
 );
 
@@ -273,7 +287,7 @@ const Item = ({ item, onRemoveItem }) => (
     <StyledColumn width="40%">{item.points}</StyledColumn>
     <StyledColumn width="40%">
       <StyledButtonSmall type="button" onClick={() => onRemoveItem(item)}>
-        Dismiss
+        <CheckIcon height="18px" width="18px" />
       </StyledButtonSmall>
     </StyledColumn>
   </StyledItem>
