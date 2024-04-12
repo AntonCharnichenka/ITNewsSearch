@@ -128,18 +128,30 @@ const storiesReducer = (state, action) => {
 };
 
 const useStorageState = (key, initialState) => {
+  const isMounted = React.useRef(false); 
+  
   const [value, setValue] = React.useState(
     localStorage.getItem(key) || initialState
   );
 
   React.useEffect(() => {
-    localStorage.setItem(key, value);
+    if (!isMounted.current) {
+      isMounted.current = true;
+    } else {
+      localStorage.setItem(key, value);
+    }
   }, [value, key]);
 
   return [value, setValue];
 };
 
 const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?query=';
+
+const getSumComments = (stories) => {
+  const sumComments = stories.data.reduce((result, value) => result + value.num_comments, 0);
+
+  return sumComments
+};
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useStorageState(
@@ -175,26 +187,34 @@ const App = () => {
     handleFetchStories();
   }, [handleFetchStories]);
 
-  const handleRemoveStory = (item) => {
-    dispatchStories({
-      type: 'REMOVE_STORY',
-      payload: item,
-    });
-  };
+  const handleRemoveStory = React.useCallback(
+    (item) => {
+      dispatchStories({
+        type: 'REMOVE_STORY',
+        payload: item,
+      });
+    },
+    []
+  );
 
-  const handleSearchInput = (event) => {
-    setSearchTerm(event.target.value);
-  };
+  const handleSearchInput = React.useCallback((event) => setSearchTerm(event.target.value), [setSearchTerm]);
 
-  const handleSearchSubmit = (event) => {
-    setUrl(`${API_ENDPOINT}${searchTerm}`);
+  const handleSearchSubmit = React.useCallback(
+    (event) => {
+      setUrl(`${API_ENDPOINT}${searchTerm}`);
 
-    event.preventDefault();
-  };
+      event.preventDefault();  
+    },
+    [setUrl, searchTerm]
+  );
+
+  const sumComments = React.useMemo(() => getSumComments(stories), [stories]);
+
+  console.log('APP');
 
   return (
     <StyledContainer>
-      <StyledHeadlinePrimary>My Hacker Stories</StyledHeadlinePrimary>
+      <StyledHeadlinePrimary>My Hacker Stories with {sumComments} comments</StyledHeadlinePrimary>
 
       <SearchForm
         searchTerm={searchTerm}
@@ -215,25 +235,27 @@ const App = () => {
   );
 };
 
-const SearchForm = ({
-  searchTerm,
-  onSearchInput,
-  onSearchSubmit,
-}) => (
-  <StyledSearchForm onSubmit={onSearchSubmit}>
-    <InputWithLabel
-      id="search"
-      value={searchTerm}
-      isFocused
-      onInputChange={onSearchInput}
-    >
-      <strong>Search:</strong>
-    </InputWithLabel>
+const SearchForm = React.memo(
+  ( {
+    searchTerm,
+    onSearchInput,
+    onSearchSubmit,
+  } ) => (
+    console.log('SearchForm') || <StyledSearchForm onSubmit={onSearchSubmit}>
+      <InputWithLabel
+        id="search"
+        value={searchTerm}
+        isFocused
+        onInputChange={onSearchInput}
+      >
+        <strong>Search:</strong>
+      </InputWithLabel>
 
-    <StyledButtonSmall type="submit" disabled={!searchTerm}>
-      <CiSearch/>
-    </StyledButtonSmall>
-  </StyledSearchForm>
+      <StyledButtonSmall type="submit" disabled={!searchTerm}>
+        <CiSearch/>
+      </StyledButtonSmall>
+    </StyledSearchForm>
+  )
 );
 
 const InputWithLabel = ({
@@ -267,20 +289,22 @@ const InputWithLabel = ({
   );
 };
 
-const List = ({ list, onRemoveItem }) => (
-  <ul>
-    {list.map((item) => (
-      <Item
-        key={item.objectID}
-        item={item}
-        onRemoveItem={onRemoveItem}
-      />
-    ))}
-  </ul>
+const List = React.memo(
+  ({ list, onRemoveItem }) => (
+    <ul>
+      {list.map((item) => (
+        <Item
+          key={item.objectID}
+          item={item}
+          onRemoveItem={onRemoveItem}
+        />
+      ))}
+    </ul>
+  )
 );
 
-const Item = ({ item, onRemoveItem }) => (
-  <StyledItem>
+const Item = React.memo(({ item, onRemoveItem }) => (
+  console.log('Item redners') || <StyledItem>
     <StyledColumn width="40%">
       <a href={item.url}>{item.title}</a>
     </StyledColumn>
@@ -293,6 +317,6 @@ const Item = ({ item, onRemoveItem }) => (
       </StyledButtonSmall>
     </StyledColumn>
   </StyledItem>
-)
+));
 
 export default App;
