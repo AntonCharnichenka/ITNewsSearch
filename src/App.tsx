@@ -374,3 +374,5 @@ const Item = ({ item, onRemoveItem }: ItemProps ): JSX.Element => ( // or const 
 );
 
 export default App;
+
+export { storiesReducer, SearchForm, InputWithLabel, List, Item };
