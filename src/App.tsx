@@ -246,6 +246,7 @@ const App = () => {
           type: 'STORIES_FETCH_SUCCESS',
           payload: result.data.hits,
         });
+
       } catch {
         dispatchStories({ type: 'STORIES_FETCH_FAILURE' });
       }
