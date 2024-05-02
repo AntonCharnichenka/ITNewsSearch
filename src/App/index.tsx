@@ -1,39 +1,14 @@
 import * as React from 'react';
 import axios from 'axios';
 // import styles from './App.module.css';
-import  { Story, Stories, List } from './List';
-import { SearchForm } from './SearchForm';
-import { StyledContainer, StyledHeadlinePrimary } from './styles';
+import { List } from '../List';
+import { Story } from '../List/types';
+import { SearchForm } from '../SearchForm';
+import { StyledContainer, StyledHeadlinePrimary } from './style';
+import { StoriesAction, StoriesState } from './types';
 
 
-type StoriesFetchInitAction = {
-  type: 'STORIES_FETCH_INIT';
-};
-
-type StoriesState = {
-  data: Stories;
-  isLoading: boolean;
-  isError: boolean;
-};
-
-type StoriesFetchSuccessAction = {
-  type: 'STORIES_FETCH_SUCCESS';
-  payload: Stories;
-};
-
-type StoriesFetchFailureAction = {
-  type: 'STORIES_FETCH_FAILURE';
-};
-
-type StoriesRemoveAction = {
-  type: "REMOVE_STORY";
-  payload: Story;
-};
-
-type StoriesAction = StoriesFetchInitAction | StoriesFetchSuccessAction | StoriesFetchFailureAction | StoriesRemoveAction;
-
-
-const storiesReducer = (state: StoriesState, action: StoriesAction): StoriesState => {  // return tyoe is inferred, so it might be not type annotated
+export const storiesReducer = (state: StoriesState, action: StoriesAction): StoriesState => {  // return tyoe is inferred, so it might be not type annotated
   switch (action.type) {
     case 'STORIES_FETCH_INIT':
       return {
@@ -67,11 +42,11 @@ const storiesReducer = (state: StoriesState, action: StoriesAction): StoriesStat
 };
 
 const useStorageState = (
-  key: string, 
+  key: string,
   initialState: string
 ): [string, (newValue: string) => void] => {
-  const isMounted = React.useRef(false); 
-  
+  const isMounted = React.useRef(false);
+
   const [value, setValue] = React.useState(  // value is inferred to be a string, setValue only takes a string as an argument
     localStorage.getItem(key) || initialState
   );
@@ -125,7 +100,7 @@ const App = () => {
       } catch {
         dispatchStories({ type: 'STORIES_FETCH_FAILURE' });
       }
-    }, 
+    },
     [url]
   );
 
@@ -145,9 +120,9 @@ const App = () => {
   const handleSearchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     setUrl(`${API_ENDPOINT}${searchTerm}`);
 
-    event.preventDefault();  
+    event.preventDefault();
   };
-  
+
   const sumComments = React.useMemo(() => getSumComments(stories), [stories]);
 
   return (
@@ -170,5 +145,3 @@ const App = () => {
 };
 
 export default App;
-
-export { storiesReducer };

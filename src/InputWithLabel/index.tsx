@@ -1,14 +1,7 @@
 import * as React from 'react';
-import  { StyledInput, StyledLabel } from './styles';
+import  { InputWithLabelProps } from './types';
+import  { StyledInput, StyledLabel } from './style';
 
-type InputWithLabelProps = {
-    id: string;
-    value: string;
-    type?: string;
-    onInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-    isFocused?: boolean;
-    children: React.ReactNode;
-  };
 
 export const InputWithLabel: React.FC<InputWithLabelProps> = ({
     id,

@@ -2,14 +2,10 @@ import * as React from 'react';
 // import CheckIcon from './check.svg?react';
 // import GlassIcon from './simple_glass.svg?react';
 import { CiSearch } from "react-icons/ci";
-import { InputWithLabel } from './InputWithLabel';
-import { StyledSearchForm, StyledButtonSmall } from './styles';
-
-type SearchFormProps = {
-    searchTerm: string;
-    onSearchInput: (event: React.ChangeEvent<HTMLInputElement>) => void;
-    onSearchSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
-};
+import { InputWithLabel } from '../InputWithLabel';
+import { StyledButtonSmall } from '../shared/styles';
+import { StyledSearchForm } from './style';
+import { SearchFormProps } from './types';
 
 export const SearchForm: React.FC<SearchFormProps> = ({
     searchTerm,
