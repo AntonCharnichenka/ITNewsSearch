@@ -1,0 +1,250 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Item > renders snapshot 1`] = `
+<li
+  class="sc-dmyCSP gbftpc"
+>
+  <span
+    class="sc-hLQSwg ktFmUj"
+    width="40%"
+  >
+    <a
+      href="https://reactjs.org/"
+    >
+      React
+    </a>
+  </span>
+  <span
+    class="sc-hLQSwg ktFmUj"
+    width="40%"
+  >
+    Jordan Walke
+  </span>
+  <span
+    class="sc-hLQSwg ktFmUj"
+    width="40%"
+  >
+    3
+  </span>
+  <span
+    class="sc-hLQSwg ktFmUj"
+    width="40%"
+  >
+    4
+  </span>
+  <span
+    class="sc-hLQSwg ktFmUj"
+    width="40%"
+  >
+    <button
+      class="sc-eDLKkx sc-jTQCzO jknmCz cHAImJ"
+      type="button"
+    >
+      <svg
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 24 24"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          id="Circle_Remove"
+        >
+          <g>
+            <path
+              d="M9.525,13.765a.5.5,0,0,0,.71.71c.59-.59,1.175-1.18,1.765-1.76l1.765,1.76a.5.5,0,0,0,.71-.71c-.59-.58-1.18-1.175-1.76-1.765.41-.42.82-.825,1.23-1.235.18-.18.35-.36.53-.53a.5.5,0,0,0-.71-.71L12,11.293,10.235,9.525a.5.5,0,0,0-.71.71L11.293,12Z"
+            />
+            <path
+              d="M12,21.933A9.933,9.933,0,1,1,21.934,12,9.945,9.945,0,0,1,12,21.933ZM12,3.067A8.933,8.933,0,1,0,20.934,12,8.944,8.944,0,0,0,12,3.067Z"
+            />
+          </g>
+        </g>
+      </svg>
+    </button>
+  </span>
+</li>
+`;
+
+exports[`List > renders snapshot 1`] = `
+<ul>
+  <li
+    class="sc-dmyCSP gbftpc"
+  >
+    <span
+      class="sc-hLQSwg ktFmUj"
+      width="40%"
+    >
+      <a
+        href="https://reactjs.org/"
+      >
+        React
+      </a>
+    </span>
+    <span
+      class="sc-hLQSwg ktFmUj"
+      width="40%"
+    >
+      Jordan Walke
+    </span>
+    <span
+      class="sc-hLQSwg ktFmUj"
+      width="40%"
+    >
+      3
+    </span>
+    <span
+      class="sc-hLQSwg ktFmUj"
+      width="40%"
+    >
+      4
+    </span>
+    <span
+      class="sc-hLQSwg ktFmUj"
+      width="40%"
+    >
+      <button
+        class="sc-eDLKkx sc-jTQCzO jknmCz cHAImJ"
+        type="button"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            id="Circle_Remove"
+          >
+            <g>
+              <path
+                d="M9.525,13.765a.5.5,0,0,0,.71.71c.59-.59,1.175-1.18,1.765-1.76l1.765,1.76a.5.5,0,0,0,.71-.71c-.59-.58-1.18-1.175-1.76-1.765.41-.42.82-.825,1.23-1.235.18-.18.35-.36.53-.53a.5.5,0,0,0-.71-.71L12,11.293,10.235,9.525a.5.5,0,0,0-.71.71L11.293,12Z"
+              />
+              <path
+                d="M12,21.933A9.933,9.933,0,1,1,21.934,12,9.945,9.945,0,0,1,12,21.933ZM12,3.067A8.933,8.933,0,1,0,20.934,12,8.944,8.944,0,0,0,12,3.067Z"
+              />
+            </g>
+          </g>
+        </svg>
+      </button>
+    </span>
+  </li>
+  <li
+    class="sc-dmyCSP gbftpc"
+  >
+    <span
+      class="sc-hLQSwg ktFmUj"
+      width="40%"
+    >
+      <a
+        href="https://redux.js.org/"
+      >
+        Redux
+      </a>
+    </span>
+    <span
+      class="sc-hLQSwg ktFmUj"
+      width="40%"
+    >
+      Dan Abramov, Andrew Clark
+    </span>
+    <span
+      class="sc-hLQSwg ktFmUj"
+      width="40%"
+    >
+      2
+    </span>
+    <span
+      class="sc-hLQSwg ktFmUj"
+      width="40%"
+    >
+      5
+    </span>
+    <span
+      class="sc-hLQSwg ktFmUj"
+      width="40%"
+    >
+      <button
+        class="sc-eDLKkx sc-jTQCzO jknmCz cHAImJ"
+        type="button"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            id="Circle_Remove"
+          >
+            <g>
+              <path
+                d="M9.525,13.765a.5.5,0,0,0,.71.71c.59-.59,1.175-1.18,1.765-1.76l1.765,1.76a.5.5,0,0,0,.71-.71c-.59-.58-1.18-1.175-1.76-1.765.41-.42.82-.825,1.23-1.235.18-.18.35-.36.53-.53a.5.5,0,0,0-.71-.71L12,11.293,10.235,9.525a.5.5,0,0,0-.71.71L11.293,12Z"
+              />
+              <path
+                d="M12,21.933A9.933,9.933,0,1,1,21.934,12,9.945,9.945,0,0,1,12,21.933ZM12,3.067A8.933,8.933,0,1,0,20.934,12,8.944,8.944,0,0,0,12,3.067Z"
+              />
+            </g>
+          </g>
+        </svg>
+      </button>
+    </span>
+  </li>
+</ul>
+`;
+
+exports[`SearchForm > renders snapshot 1`] = `
+<form
+  class="sc-iBdnpw gWhaa"
+>
+  <label
+    class="sc-fsYfdN cmJZKY"
+    for="search"
+  >
+    <strong>
+      Search:
+    </strong>
+  </label>
+   
+  <input
+    class="sc-qZrbh dSzoWA"
+    id="search"
+    type="text"
+    value="React"
+  />
+  <button
+    class="sc-eDLKkx sc-jTQCzO jknmCz cHAImJ"
+    type="submit"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      id="search"
+      stroke="currentColor"
+      stroke-width="0"
+      version="1.1"
+      viewBox="0 0 24 24"
+      width="1em"
+      x="0px"
+      xmlns="http://www.w3.org/2000/svg"
+      y="0px"
+    >
+      <g>
+        <path
+          d="M20.031,20.79c0.46,0.46,1.17-0.25,0.71-0.7l-3.75-3.76c1.27-1.41,2.04-3.27,2.04-5.31
+		c0-4.39-3.57-7.96-7.96-7.96s-7.96,3.57-7.96,7.96c0,4.39,3.57,7.96,7.96,7.96c1.98,0,3.81-0.73,5.21-1.94L20.031,20.79z
+		 M4.11,11.02c0-3.84,3.13-6.96,6.96-6.96c3.84,0,6.96,3.12,6.96,6.96c0,3.84-3.12,6.96-6.96,6.96C7.24,17.98,4.11,14.86,4.11,11.02
+		z"
+        />
+      </g>
+    </svg>
+  </button>
+</form>
+`;

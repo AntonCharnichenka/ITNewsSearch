@@ -1,6 +1,9 @@
 import  { describe, it, expect, vi } from 'vitest';
-import { storiesReducer, Item, List, SearchForm, InputWithLabel } from './App'
+import { storiesReducer } from './App'
 import App from './App';
+import { List, Item } from './List';
+import { SearchForm } from './SearchForm';
+import { InputWithLabel } from './InputWithLabel';
 import { render, screen, fireEvent, waitFor, within } from '@testing-library/react';
 import axios from 'axios';
 
@@ -121,6 +124,13 @@ describe(
                 expect(handleRemoveItem).toHaveBeenCalledWith(storyOne);
             }
         )
+        it(
+            'renders snapshot',
+            () => {
+                const { container } = render(<Item item={storyOne}/>);
+                expect(container.firstChild).toMatchSnapshot();
+            }
+        )
 
     }
 );
@@ -180,6 +190,14 @@ describe(
                 expect(searchFormProps.onSearchSubmit).toHaveBeenCalledTimes(1);
             }
         )
+
+        it(
+            'renders snapshot',
+            () => {
+                const { container } = render(<SearchForm {...searchFormProps}/>);
+                expect(container.firstChild).toMatchSnapshot();
+            }
+        )
     }
 );
 
@@ -212,6 +230,13 @@ describe(
 
                 expect(onRemoveItem).toHaveBeenCalledTimes(1);
                 expect(onRemoveItem).toHaveBeenCalledWith(storyOne);
+            }
+        )
+        it(
+            'renders snapshot',
+            () => {
+                const { container } = render(<List list={stories}/>);
+                expect(container.firstChild).toMatchSnapshot();
             }
         )
     }
@@ -247,6 +272,15 @@ describe(
                 // );    
             }
         )
+        // it(
+        //     'renders snapshot',
+        //     () => {
+        //         const { container } = render(<InputWithLabel id='search' value='React' isFocused>Search:</InputWithLabel>);
+        //         expect(container.firstChild).toMatchSnapshot();
+        //     }
+        // )
+
+        // in the test above: wait input to be focused then make and check snapshot
     }
 );
 
@@ -357,10 +391,11 @@ describe(
                 expect(screen.queryByDisplayValue('React')).toBeNull();
                 expect(screen.getByDisplayValue('JavScript')).toBeInTheDocument();
 
-                // screen.debug();
 
                 const form = screen.getByLabelText(/search/i).parentNode;
                 const submit_button = form.querySelector('button');
+
+                // Second data fetching
 
                 fireEvent.submit(submit_button);
 
