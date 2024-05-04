@@ -18,10 +18,10 @@ export const StyledButton = styled.button`
     stroke: #ffffff;
   };
 
-  &:hover > svg > path {
-    // fill: #ffffff;
-    stroke: #ffffff;
-  };
+  // &:hover > svg > path {
+  //   // fill: #ffffff;
+  //   stroke: #ffffff;
+  // };
   }
 `;
 

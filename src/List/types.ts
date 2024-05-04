@@ -7,14 +7,18 @@ export type Story = {
     points: number;
   };
   
-  export type Stories = Story[];
+export type Stories = Story[];
   
-  export type ItemProps = {
+export type ItemProps = {
     item: Story;
     onRemoveItem: (item: Story) => void;
   };
   
-  export type ListProps = {
+export type ListProps = {
     list: Stories;
     onRemoveItem: (item: Story) => void;
   };
+
+export type SortKey = 'NONE' | 'TITLE' | 'AUTHOR' | 'COMMENTS' | 'POINTS';
+
+export type SortFunction = (list: Stories) => Stories;
