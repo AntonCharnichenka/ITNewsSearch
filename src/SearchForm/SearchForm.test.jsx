@@ -63,6 +63,13 @@ describe(
             () => {
                 const { container } = render(<SearchForm {...searchFormProps}/>);
                 expect(container.firstChild).toMatchSnapshot();
+
+                // Snapshot testing does not inherently capture the runtime state of elements, 
+                // such as whether an input is focused or not. 
+                // The focus state is a dynamic DOM state that isn't represented directly in the markup or static attributes that would be visible in a snapshot.
+
+                // Focus is not a DOM attribute: It does not have a corresponding attribute in the HTML output that snapshot testing would capture.
+                // Focus is managed by the browser: The focus state is managed by the browser and typically only affects the styling and behavior (such as which element responds to keyboard inputs), rather than the underlying HTML.
             }
         )
     }

@@ -8,6 +8,6 @@ export default defineConfig({
   plugins: [react(), eslint(), svgr()],
   test: {
     environment: 'jsdom',
-    setupFiles: './tests/setup.js',    
+    setupFiles: './tests/setup.js',   
   },
 })

@@ -9,9 +9,6 @@ describe(
             'renders input field and label for it',
             () => {
                 const onInputChange = vi.fn();
-                // const a = (a_event) => {
-                //     const aa = 1;
-                // }
                 render(<InputWithLabel id='search' value='React' onInputChange={onInputChange} isFocused>Search:</InputWithLabel>)
                 // screen.debug();
 
@@ -32,14 +29,12 @@ describe(
                 // );    
             }
         )
-        // it(
-        //     'renders snapshot',
-        //     () => {
-        //         const { container } = render(<InputWithLabel id='search' value='React' isFocused>Search:</InputWithLabel>);
-        //         expect(container.firstChild).toMatchSnapshot();
-        //     }
-        // )
-
-        // in the test above: wait input to be focused then make and check snapshot
+        it(
+            'renders snapshot',
+            () => {
+                const { container } = render(<InputWithLabel id='search' value='React' onInputChange={vi.fn()} isFocused>Search:</InputWithLabel>);
+                expect(container.children).toMatchSnapshot(); // use children here as InputWithLabel is a component composition
+            }
+        )
     }
 );
