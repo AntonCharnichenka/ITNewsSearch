@@ -21,4 +21,6 @@ export type ListProps = {
 
 export type SortKey = 'NONE' | 'TITLE' | 'AUTHOR' | 'COMMENTS' | 'POINTS';
 
+export type sortState = {sortKey: SortKey, isReversed: boolean};
+
 export type SortFunction = (list: Stories) => Stories;
