@@ -1,7 +1,7 @@
 import  { describe, it, expect, vi } from 'vitest';
 import { storiesReducer } from './index'
 import App from './index';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor, within } from '@testing-library/react';
 import axios from 'axios';
 
 vi.mock('axios');
@@ -209,6 +209,21 @@ describe(
                 expect(screen.queryByText('Dan Abramov')).toBeNull();
                 expect(screen.getByText('Brendan Eich')).toBeInTheDocument();
             }
+        );
+        it(
+            'renders snapshot',
+            async () => {
+                const promise = Promise.resolve({ data: { hits: stories } });
+                axios.get.mockImplementationOnce(() => promise);
+                const { container } = render(<App/>);
+                
+                const list = await screen.findByRole('list');
+                expect(within(list).queryByText('React')).toBeInTheDocument();
+                expect(within(list).queryByText('Redux')).toBeInTheDocument();
+                
+                expect(container.firstChild).toMatchSnapshot();
+            }
         )
+
     }
 );
