@@ -6,13 +6,19 @@ export type StoriesFetchInitAction = {
   
 export type StoriesState = {
   data: Stories;
+  page: number;
   isLoading: boolean;
   isError: boolean;
 };
 
+type Payload = {
+  list: Stories;
+  page: number;
+};
+
 export type StoriesFetchSuccessAction = {
   type: 'STORIES_FETCH_SUCCESS';
-  payload: Stories;
+  payload: Payload;
 };
 
 export type StoriesFetchFailureAction = {
@@ -25,3 +31,18 @@ export type StoriesRemoveAction = {
 };
 
 export type StoriesAction = StoriesFetchInitAction | StoriesFetchSuccessAction | StoriesFetchFailureAction | StoriesRemoveAction;
+
+export type SearchTerm = string;
+
+export type LastSearches = SearchTerm[];
+
+export type HandleLastSearchesFunction = (searchTerm: SearchTerm) => void;
+
+export type LastSearchesProps = {
+  lastSearches: LastSearches;
+  handleLastSearch: HandleLastSearchesFunction;
+};
+
+// export type extractSearchTermFunction = (url: string) => SearchTerm;
+
+// export type  get5lastSearchesFunction = (urls: string[]) => string[];
