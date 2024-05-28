@@ -70,29 +70,27 @@ describe(
     'List',
     () => {
         it(
-            'renders items', 
+            'renders items and sort buttons', 
             () => {
                 const onRemoveItem = vi.fn();
                 render(<List list={stories} onRemoveItem={onRemoveItem}/>);
 
-                expect(screen.getAllByRole('listitem')).toHaveLength(2);
+                expect(screen.getAllByRole('listitem')).toHaveLength(3);
+
+                const sort_buttons = screen.getByText('Comments').closest('li');
+                expect(within(sort_buttons).getAllByRole('button')).toHaveLength(4);
+                expect(within(sort_buttons).getByText('Title')).toBeInTheDocument();
+                expect(within(sort_buttons).getByText('Author')).toBeInTheDocument();
+                expect(within(sort_buttons).getByText('Points')).toBeInTheDocument();
 
                 const react_item = screen.getByText('React').closest('li');
                 const redux_item = screen.getByText('Redux').closest('li');
-
-                expect(react_item).toBeInTheDocument();
-                expect(redux_item).toBeInTheDocument();
-
                 expect(within(react_item).getByText('Jordan Walke')).toBeInTheDocument();
                 expect(within(redux_item).getByText('Dan Abramov, Andrew Clark')).toBeInTheDocument();
-
                 const react_item_button = within(react_item).getByRole('button');
-
-                expect(react_item_button).toBeInTheDocument();
                 expect(within(redux_item).getByRole('button')).toBeInTheDocument();
 
                 fireEvent.click(react_item_button);
-
                 expect(onRemoveItem).toHaveBeenCalledTimes(1);
                 expect(onRemoveItem).toHaveBeenCalledWith(storyOne);
             }
@@ -104,5 +102,6 @@ describe(
                 expect(container.firstChild).toMatchSnapshot();
             }
         )
+        it.todo('test sorting items')
     }
 );

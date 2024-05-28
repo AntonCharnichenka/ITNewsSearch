@@ -41,10 +41,10 @@ describe(
             'removes story from all stories if action is REMOVE_STORY',
             () => {
                 const action = { type: 'REMOVE_STORY', payload: storyOne };
-                const state = { data: stories, isLoading: false, isError: false };
+                const state = { data: stories, page: 0, isLoading: false, isError: false };
 
                 const new_state = storiesReducer(state, action);
-                const expected_state = { data: [storyTwo], isLoading: false, isError: false};
+                const expected_state = { data: [storyTwo], page: 0, isLoading: false, isError: false};
 
                 expect(new_state).toStrictEqual(expected_state);
             }
@@ -53,10 +53,10 @@ describe(
             'set isError to true if action is STORIES_FETCH_FAILURE',
             () => {
                 const action = { type: 'STORIES_FETCH_FAILURE' };
-                const state = { data: [], isLoading: false, isError: false };
+                const state = { data: [], page: 0, isLoading: false, isError: false };
 
                 const new_state = storiesReducer(state, action);
-                const expected_state = { data: [], isLoading: false, isError: true };
+                const expected_state = { data: [], page: 0, isLoading: false, isError: true };
 
                 expect(new_state).toStrictEqual(expected_state);
             }
@@ -64,11 +64,11 @@ describe(
         it(
             'set data if action is STORIES_FETCH_SUCCESS',
             () => {
-                const action = { type: 'STORIES_FETCH_SUCCESS', payload: stories };
-                const state = { data: [], isLoading: false, isError: false };
+                const action = { type: 'STORIES_FETCH_SUCCESS', payload: {list: stories, page: 0} };
+                const state = { data: [], page: 0, isLoading: false, isError: false };
 
                 const new_state = storiesReducer(state, action);
-                const expected_state = { data: stories, isLoading: false, isError: false };
+                const expected_state = { data: stories, page: 0, isLoading: false, isError: false };
 
                 expect(new_state).toStrictEqual(expected_state);
             }
@@ -94,7 +94,7 @@ describe(
         it(
             'succeeds fetching data',
             async () => {
-                const promise = Promise.resolve({ data: { hits: stories } });
+                const promise = Promise.resolve({ data: { hits: stories, page: 0 } });
                 axios.get.mockImplementationOnce(() => promise);
 
                 render(<App/>);
@@ -107,7 +107,6 @@ describe(
 
                 expect(screen.getByText('React')).toBeInTheDocument();
                 expect(screen.getByText('Redux')).toBeInTheDocument();
-                expect(screen.getAllByRole('button').length).toBe(3);
             }
         );
         it(
@@ -133,26 +132,24 @@ describe(
         it(
             'removes a story',
             async () => {
-                const promise = Promise.resolve( {data: { hits: stories }} );
+                const promise = Promise.resolve( {data: { hits: stories, page: 0 }} );
                 axios.get.mockImplementationOnce(() => promise);
 
                 render(<App/>);
 
                 await waitFor(async () => await promise);
 
-                expect(screen.getAllByRole('button').length).toBe(3);
-                expect(screen.getByText('Jordan Walke')).toBeInTheDocument();
+                const item = screen.getByText('Jordan Walke').closest('li');
+                const button = within(item).getByRole('button');
+                fireEvent.click(button);
 
-                fireEvent.click(screen.getAllByRole('button')[1]); // 1st button is submit for search input, 2nd is for removing 1st story
-
-                expect(screen.getAllByRole('button').length).toBe(2);
                 expect(screen.queryByText('Jordan Walke')).toBeNull();
             }
         );
         it(
             'searches for specific stories',
             async () => {
-                const reactPromise = Promise.resolve({ data: { hits: stories } });
+                const reactPromise = Promise.resolve({ data: { hits: stories, page: 0 } });
                 const anotherStory = {
                     title: 'JavScript',
                     url: 'https://js.org/',
@@ -161,7 +158,7 @@ describe(
                     points: 10,
                     objectID: 2,
                 };
-                const javascriptPromise = Promise.resolve({ data: { hits: [anotherStory] } })
+                const javascriptPromise = Promise.resolve({ data: { hits: [anotherStory], page: 0 } })
 
                 axios.get.mockImplementation(
                     (url) => {
@@ -183,7 +180,7 @@ describe(
                 expect(screen.getByDisplayValue('React')).toBeInTheDocument();
                 expect(screen.queryByDisplayValue('JavScript')).toBeNull();
                 expect(screen.getByText('Jordan Walke')).toBeInTheDocument();
-                expect(screen.queryByText('Dan Abramov')).toBeNull();
+                expect(screen.queryByText('Dan Abramov, Andrew Clark')).toBeInTheDocument();
                 expect(screen.queryByText('Brendan Eich')).toBeNull();
 
                 // User interaction -> Search
@@ -206,7 +203,7 @@ describe(
                 await waitFor(async () => await javascriptPromise);
 
                 expect(screen.queryByText('Jordan Walke')).toBeNull();
-                expect(screen.queryByText('Dan Abramov')).toBeNull();
+                expect(screen.queryByText('Dan Abramov, Andrew Clark')).toBeNull();
                 expect(screen.getByText('Brendan Eich')).toBeInTheDocument();
             }
         );

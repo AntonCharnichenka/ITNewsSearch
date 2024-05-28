@@ -15,29 +15,29 @@ exports[`Item > renders snapshot 1`] = `
     </a>
   </span>
   <span
-    class="sc-guDLey gQkZXT"
-    width="40%"
+    class="sc-guDLey gQjOKI"
+    width="25%"
   >
     Jordan Walke
   </span>
   <span
-    class="sc-guDLey gQkZXT"
-    width="40%"
+    class="sc-guDLey gQjNCr"
+    width="15%"
   >
     3
   </span>
   <span
-    class="sc-guDLey gQkZXT"
-    width="40%"
+    class="sc-guDLey gQlbYC"
+    width="10%"
   >
     4
   </span>
   <span
-    class="sc-guDLey gQkZXT"
-    width="40%"
+    class="sc-guDLey gQlbYC"
+    width="10%"
   >
     <button
-      class="sc-dmyCSP sc-hLQSwg heaVTy fzPaEe"
+      class="sc-dmyCSP sc-hLQSwg iFoXrO fzPaEe"
       type="button"
     >
       <svg
@@ -76,6 +76,110 @@ exports[`List > renders snapshot 1`] = `
       class="sc-guDLey gQkZXT"
       width="40%"
     >
+      <button
+        class="sc-dmyCSP sc-hLQSwg iFoXrO fzPaEe"
+        type="button"
+      >
+        Title
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M18.5 17.25a.75.75 0 0 1-1.5 0V7.56l-2.22 2.22a.75.75 0 1 1-1.06-1.06l3.5-3.5a.75.75 0 0 1 1.06 0l3.5 3.5a.75.75 0 0 1-1.06 1.06L18.5 7.56v9.69Zm-15.75.25a.75.75 0 0 1 0-1.5h9.5a.75.75 0 0 1 0 1.5h-9.5Zm0-5a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 0 1.5h-5.5Zm0-5a.75.75 0 0 1 0-1.5h3.5a.75.75 0 0 1 0 1.5h-3.5Z"
+          />
+        </svg>
+      </button>
+    </span>
+    <span
+      class="sc-guDLey gQjOKI"
+      width="25%"
+    >
+      <button
+        class="sc-dmyCSP sc-hLQSwg iFoXrO fzPaEe"
+        type="button"
+      >
+        Author
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M18.5 17.25a.75.75 0 0 1-1.5 0V7.56l-2.22 2.22a.75.75 0 1 1-1.06-1.06l3.5-3.5a.75.75 0 0 1 1.06 0l3.5 3.5a.75.75 0 0 1-1.06 1.06L18.5 7.56v9.69Zm-15.75.25a.75.75 0 0 1 0-1.5h9.5a.75.75 0 0 1 0 1.5h-9.5Zm0-5a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 0 1.5h-5.5Zm0-5a.75.75 0 0 1 0-1.5h3.5a.75.75 0 0 1 0 1.5h-3.5Z"
+          />
+        </svg>
+      </button>
+    </span>
+    <span
+      class="sc-guDLey gQjNCr"
+      width="15%"
+    >
+      <button
+        class="sc-dmyCSP sc-hLQSwg iFoXrO fzPaEe"
+        type="button"
+      >
+        Comments
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M18.5 17.25a.75.75 0 0 1-1.5 0V7.56l-2.22 2.22a.75.75 0 1 1-1.06-1.06l3.5-3.5a.75.75 0 0 1 1.06 0l3.5 3.5a.75.75 0 0 1-1.06 1.06L18.5 7.56v9.69Zm-15.75.25a.75.75 0 0 1 0-1.5h9.5a.75.75 0 0 1 0 1.5h-9.5Zm0-5a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 0 1.5h-5.5Zm0-5a.75.75 0 0 1 0-1.5h3.5a.75.75 0 0 1 0 1.5h-3.5Z"
+          />
+        </svg>
+      </button>
+    </span>
+    <span
+      class="sc-guDLey gQlbYC"
+      width="10%"
+    >
+      <button
+        class="sc-dmyCSP sc-hLQSwg iFoXrO fzPaEe"
+        type="button"
+      >
+        Points
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M18.5 17.25a.75.75 0 0 1-1.5 0V7.56l-2.22 2.22a.75.75 0 1 1-1.06-1.06l3.5-3.5a.75.75 0 0 1 1.06 0l3.5 3.5a.75.75 0 0 1-1.06 1.06L18.5 7.56v9.69Zm-15.75.25a.75.75 0 0 1 0-1.5h9.5a.75.75 0 0 1 0 1.5h-9.5Zm0-5a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 0 1.5h-5.5Zm0-5a.75.75 0 0 1 0-1.5h3.5a.75.75 0 0 1 0 1.5h-3.5Z"
+          />
+        </svg>
+      </button>
+    </span>
+    <span
+      class="sc-guDLey gQlbYC"
+      width="10%"
+    />
+  </li>
+  <li
+    class="sc-beySPh cLibeB"
+  >
+    <span
+      class="sc-guDLey gQkZXT"
+      width="40%"
+    >
       <a
         href="https://reactjs.org/"
       >
@@ -83,29 +187,29 @@ exports[`List > renders snapshot 1`] = `
       </a>
     </span>
     <span
-      class="sc-guDLey gQkZXT"
-      width="40%"
+      class="sc-guDLey gQjOKI"
+      width="25%"
     >
       Jordan Walke
     </span>
     <span
-      class="sc-guDLey gQkZXT"
-      width="40%"
+      class="sc-guDLey gQjNCr"
+      width="15%"
     >
       3
     </span>
     <span
-      class="sc-guDLey gQkZXT"
-      width="40%"
+      class="sc-guDLey gQlbYC"
+      width="10%"
     >
       4
     </span>
     <span
-      class="sc-guDLey gQkZXT"
-      width="40%"
+      class="sc-guDLey gQlbYC"
+      width="10%"
     >
       <button
-        class="sc-dmyCSP sc-hLQSwg heaVTy fzPaEe"
+        class="sc-dmyCSP sc-hLQSwg iFoXrO fzPaEe"
         type="button"
       >
         <svg
@@ -147,29 +251,29 @@ exports[`List > renders snapshot 1`] = `
       </a>
     </span>
     <span
-      class="sc-guDLey gQkZXT"
-      width="40%"
+      class="sc-guDLey gQjOKI"
+      width="25%"
     >
       Dan Abramov, Andrew Clark
     </span>
     <span
-      class="sc-guDLey gQkZXT"
-      width="40%"
+      class="sc-guDLey gQjNCr"
+      width="15%"
     >
       2
     </span>
     <span
-      class="sc-guDLey gQkZXT"
-      width="40%"
+      class="sc-guDLey gQlbYC"
+      width="10%"
     >
       5
     </span>
     <span
-      class="sc-guDLey gQkZXT"
-      width="40%"
+      class="sc-guDLey gQlbYC"
+      width="10%"
     >
       <button
-        class="sc-dmyCSP sc-hLQSwg heaVTy fzPaEe"
+        class="sc-dmyCSP sc-hLQSwg iFoXrO fzPaEe"
         type="button"
       >
         <svg
