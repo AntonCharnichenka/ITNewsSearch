@@ -1,12 +1,12 @@
 import * as React from 'react';
 import axios from 'axios';
 // import styles from './App.module.css';
-import { List } from '../List';
-import { Story } from '../List/types';
-import { SearchForm } from '../SearchForm';
+import { List } from './List';
+import { Story } from './List/types';
+import { SearchForm } from './SearchForm';
 import { StyledContainer, StyledHeadlinePrimary } from './style';
 import { StoriesAction, StoriesState, LastSearchesProps, HandleLastSearchesFunction, SearchTerm } from './types';
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
+// import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 
 export const storiesReducer = (state: StoriesState, action: StoriesAction): StoriesState => {  // return tyoe is inferred, so it might be not type annotated
@@ -96,7 +96,7 @@ const get5lastSearches = (urls: string[]): string[] => urls.reduce(
     } else {
       return result.concat(searchTerm);
     };
-  }, 
+  },
   []
 ).slice(-6).slice(0, -1);
 
@@ -198,8 +198,8 @@ const App = () => {
   );
 };
 
-const LastSearches: React.FC<LastSearchesProps> = ( { lastSearches, handleLastSearch } ) => (
-  <div style={{display:"flex"}}>
+const LastSearches: React.FC<LastSearchesProps> = ({ lastSearches, handleLastSearch }) => (
+  <div style={{ display: "flex" }}>
     <label htmlFor="last-searches">Last searches:</label>
     &nbsp;
     <div id="last-searches">

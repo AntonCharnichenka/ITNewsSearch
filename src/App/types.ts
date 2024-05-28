@@ -1,9 +1,9 @@
-import { Story, Stories } from '../List/types';
+import { Story, Stories } from './List/types';
 
 export type StoriesFetchInitAction = {
   type: 'STORIES_FETCH_INIT';
 };
-  
+
 export type StoriesState = {
   data: Stories;
   page: number;
