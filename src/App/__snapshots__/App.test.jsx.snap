@@ -2,20 +2,20 @@
 
 exports[`App > renders snapshot 1`] = `
 <div
-  class="sc-fsYfdN gAseHK"
+  class="sc-imWZod kFLnfo"
 >
   <h1
-    class="sc-qZrbh hdojZd"
+    class="sc-jXbVAB byDEFv"
   >
-    My Hacker Stories with 
+    IT news with 
     5
      comments
   </h1>
   <form
-    class="sc-iBdnpw gWhaa"
+    class="sc-kAycRU erlPRT"
   >
     <label
-      class="sc-jTQCzO cSAbIZ"
+      class="sc-iGgVNO icfFMm"
       for="search"
     >
       <strong>
@@ -24,13 +24,13 @@ exports[`App > renders snapshot 1`] = `
     </label>
      
     <input
-      class="sc-gLLuof hBaxUk"
+      class="sc-gsFSjX ixEuHU"
       id="search"
       type="text"
       value="JavScript"
     />
     <button
-      class="sc-dmyCSP sc-hLQSwg iFoXrO fzPaEe"
+      class="sc-eqUzNf sc-fqkwJk chkPTJ hZzotC"
       type="submit"
     >
       <svg
@@ -60,14 +60,14 @@ exports[`App > renders snapshot 1`] = `
   <hr />
   <ul>
     <li
-      class="sc-beySPh cLibeB"
+      class="sc-aYaIB tYBJy"
     >
       <span
-        class="sc-guDLey gQkZXT"
+        class="sc-gEvDqW kJfDDL"
         width="40%"
       >
         <button
-          class="sc-dmyCSP sc-hLQSwg iFoXrO fzPaEe"
+          class="sc-eqUzNf sc-fqkwJk chkPTJ hZzotC"
           type="button"
         >
           Title
@@ -87,11 +87,11 @@ exports[`App > renders snapshot 1`] = `
         </button>
       </span>
       <span
-        class="sc-guDLey gQjOKI"
+        class="sc-gEvDqW kJesqA"
         width="25%"
       >
         <button
-          class="sc-dmyCSP sc-hLQSwg iFoXrO fzPaEe"
+          class="sc-eqUzNf sc-fqkwJk chkPTJ hZzotC"
           type="button"
         >
           Author
@@ -111,11 +111,11 @@ exports[`App > renders snapshot 1`] = `
         </button>
       </span>
       <span
-        class="sc-guDLey gQjNCr"
+        class="sc-gEvDqW kJerij"
         width="15%"
       >
         <button
-          class="sc-dmyCSP sc-hLQSwg iFoXrO fzPaEe"
+          class="sc-eqUzNf sc-fqkwJk chkPTJ hZzotC"
           type="button"
         >
           Comments
@@ -135,11 +135,11 @@ exports[`App > renders snapshot 1`] = `
         </button>
       </span>
       <span
-        class="sc-guDLey gQlbYC"
+        class="sc-gEvDqW kJfFEu"
         width="10%"
       >
         <button
-          class="sc-dmyCSP sc-hLQSwg iFoXrO fzPaEe"
+          class="sc-eqUzNf sc-fqkwJk chkPTJ hZzotC"
           type="button"
         >
           Points
@@ -159,15 +159,15 @@ exports[`App > renders snapshot 1`] = `
         </button>
       </span>
       <span
-        class="sc-guDLey gQlbYC"
+        class="sc-gEvDqW kJfFEu"
         width="10%"
       />
     </li>
     <li
-      class="sc-beySPh cLibeB"
+      class="sc-aYaIB tYBJy"
     >
       <span
-        class="sc-guDLey gQkZXT"
+        class="sc-gEvDqW kJfDDL"
         width="40%"
       >
         <a
@@ -177,29 +177,29 @@ exports[`App > renders snapshot 1`] = `
         </a>
       </span>
       <span
-        class="sc-guDLey gQjOKI"
+        class="sc-gEvDqW kJesqA"
         width="25%"
       >
         Jordan Walke
       </span>
       <span
-        class="sc-guDLey gQjNCr"
+        class="sc-gEvDqW kJerij"
         width="15%"
       >
         3
       </span>
       <span
-        class="sc-guDLey gQlbYC"
+        class="sc-gEvDqW kJfFEu"
         width="10%"
       >
         4
       </span>
       <span
-        class="sc-guDLey gQlbYC"
+        class="sc-gEvDqW kJfFEu"
         width="10%"
       >
         <button
-          class="sc-dmyCSP sc-hLQSwg iFoXrO fzPaEe"
+          class="sc-eqUzNf sc-fqkwJk chkPTJ hZzotC"
           type="button"
         >
           <svg
@@ -228,10 +228,10 @@ exports[`App > renders snapshot 1`] = `
       </span>
     </li>
     <li
-      class="sc-beySPh cLibeB"
+      class="sc-aYaIB tYBJy"
     >
       <span
-        class="sc-guDLey gQkZXT"
+        class="sc-gEvDqW kJfDDL"
         width="40%"
       >
         <a
@@ -241,29 +241,29 @@ exports[`App > renders snapshot 1`] = `
         </a>
       </span>
       <span
-        class="sc-guDLey gQjOKI"
+        class="sc-gEvDqW kJesqA"
         width="25%"
       >
         Dan Abramov, Andrew Clark
       </span>
       <span
-        class="sc-guDLey gQjNCr"
+        class="sc-gEvDqW kJerij"
         width="15%"
       >
         2
       </span>
       <span
-        class="sc-guDLey gQlbYC"
+        class="sc-gEvDqW kJfFEu"
         width="10%"
       >
         5
       </span>
       <span
-        class="sc-guDLey gQlbYC"
+        class="sc-gEvDqW kJfFEu"
         width="10%"
       >
         <button
-          class="sc-dmyCSP sc-hLQSwg iFoXrO fzPaEe"
+          class="sc-eqUzNf sc-fqkwJk chkPTJ hZzotC"
           type="button"
         >
           <svg

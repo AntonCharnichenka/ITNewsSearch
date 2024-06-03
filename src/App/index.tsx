@@ -179,7 +179,7 @@ const App = () => {
 
   return (
     <StyledContainer>
-      <StyledHeadlinePrimary>My Hacker Stories with {sumComments} comments</StyledHeadlinePrimary>
+      <StyledHeadlinePrimary>IT news with {sumComments} comments</StyledHeadlinePrimary>
       <SearchForm
         searchTerm={searchTerm}
         onSearchInput={handleSearchInput}

@@ -1,11 +1,11 @@
 # ITNewsSearch
 
-This project is a news search and filter application using the [Algolia Hacker News Search API](https://hn.algolia.com/api/v1). 
+This project is a news search and filter application using the [Algolia News Search API](https://hn.algolia.com/api/v1). 
 It is built using React with TypeScript, and bootstrapped with Vite for a faster and leaner development experience.
 
 ## Features
 
-- **Search News**: Users can search for news articles via the Algolia Hacker News API.
+- **Search News**: Users can search for news articles via the Algolia News API.
 - **Sort Results**: Sort search results based on various criteria.
 - **Responsive UI**: Adaptively designed to provide a consistent experience across different devices.
 

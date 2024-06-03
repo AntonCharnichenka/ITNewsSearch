@@ -3,13 +3,13 @@
 exports[`InputWithLabel > renders snapshot 1`] = `
 HTMLCollection [
   <label
-    class="sc-beySPh ieXUgp"
+    class="sc-aYaIB iJLwbK"
     for="search"
   >
     Search:
   </label>,
   <input
-    class="sc-guDLey bOOkIh"
+    class="sc-gEvDqW ggpFwF"
     id="search"
     type="text"
     value="React"

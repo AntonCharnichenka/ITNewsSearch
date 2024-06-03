@@ -2,10 +2,10 @@
 
 exports[`SearchForm > renders snapshot 1`] = `
 <form
-  class="sc-jTQCzO eMkETl"
+  class="sc-iGgVNO fgzkTm"
 >
   <label
-    class="sc-beySPh ieXUgp"
+    class="sc-aYaIB iJLwbK"
     for="search"
   >
     <strong>
@@ -14,13 +14,13 @@ exports[`SearchForm > renders snapshot 1`] = `
   </label>
    
   <input
-    class="sc-guDLey bOOkIh"
+    class="sc-gEvDqW ggpFwF"
     id="search"
     type="text"
     value="React"
   />
   <button
-    class="sc-dmyCSP sc-hLQSwg iFoXrO fzPaEe"
+    class="sc-eqUzNf sc-fqkwJk chkPTJ hZzotC"
     type="submit"
   >
     <svg
