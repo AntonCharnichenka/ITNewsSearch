@@ -9,7 +9,7 @@ import { StoriesAction, StoriesState, LastSearchesProps, HandleLastSearchesFunct
 // import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 
-export const storiesReducer = (state: StoriesState, action: StoriesAction): StoriesState => {  // return tyoe is inferred, so it might be not type annotated
+export const storiesReducer = (state: StoriesState, action: StoriesAction): StoriesState => {  // return type is inferred, so it might be not type annotated
   switch (action.type) {
     case 'STORIES_FETCH_INIT':
       return {
@@ -35,7 +35,7 @@ export const storiesReducer = (state: StoriesState, action: StoriesAction): Stor
       return {
         ...state,
         data: state.data.filter(
-          (story) => action.payload.objectID !== story.objectID
+          (story) => story.objectID !== action.payload.objectID
         ),
       };
     default:
@@ -71,7 +71,6 @@ const getSumComments = (stories: StoriesState): number => {
 };
 
 
-// const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?query=';
 const API_BASE = 'https://hn.algolia.com/api/v1';
 const API_SEARCH = '/search';
 const PARAM_SEARCH = 'query=';
@@ -89,9 +88,9 @@ const get5lastSearches = (urls: string[]): string[] => urls.reduce(
       return result.concat(searchTerm);
     };
 
-    const previousSearchTerms = result[result.length - 1];
+    const previousSearchTerm = result[result.length - 1];
 
-    if (searchTerm === previousSearchTerms) {
+    if (searchTerm === previousSearchTerm) {
       return result;
     } else {
       return result.concat(searchTerm);
@@ -160,7 +159,7 @@ const App = () => {
   const handleSearchSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     hadleSearch(searchTerm, 0);
 
-    event.preventDefault();
+    event.preventDefault(); // prevent reload page because of default bejaviour of submitting a form
   };
 
   const handleLastSearch: HandleLastSearchesFunction = (searchTerm) => {
